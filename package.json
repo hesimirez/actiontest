@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview dist"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
   "packageManager": "pnpm@12.4.1",
   "type": "module",
   "dependencies": {
-    "rollup": "^4.63.3"
+    "rollup": "^4.63.3",
+    "vitepress": "^1.6.4"
   }
 }
