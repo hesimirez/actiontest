@@ -14,7 +14,7 @@ jobs: # 任务
       - name: install and build
         run: |
           npm install pnpm -g 
-          pnpm install 
+          pnpm install --allowed-dep-scripts=esbuild
           pnpm docs:build
 
       - name: deploy
