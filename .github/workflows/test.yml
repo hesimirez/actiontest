@@ -18,6 +18,6 @@ jobs: # 任务
           pnpm docs:build
 
       - name: deploy
-        uses: JamesIves/ github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@v4 # 部署操作
         with:
           folder: docs/.vitepress/dist # 部署的文件夹
