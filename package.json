@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview dist"
+    "docs:preview": "vitepress preview dist",
+    "build": "node scripts/builds.js"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,8 @@
   "packageManager": "pnpm@12.4.1",
   "type": "module",
   "dependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@vitejs/plugin-vue": "^6.0.9",
     "rollup": "^4.63.3",
     "vitepress": "^1.6.4"
   }
