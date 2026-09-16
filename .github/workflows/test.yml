@@ -2,10 +2,19 @@ name: GitHub Actions Demo #工作流
 
 on: [push] # 触发条件
 jobs: # 任务
-  build: # 任务名称
+  build-and-deploy: # 任务名称
     runs-on: ubuntu-latest # 运行环境
     steps: # 步骤
-      - run: echo "Hello, world!" # 打印hello world
-      # - name: Checkout # 检出代码
+      - name: Checkout # 检出代码
+        uses: actions/checkout@v3 # 检出代码操作
 
-      # uses: actions/checkout@v3 # 检出代码操作
+      - name: install and build
+        run: |
+          npm install pnpm -g 
+          pnpm install 
+          pnpm docs:build
+
+      - name: deploy
+        user: JamesIves/ github-pages-deploy-action@4
+        with:
+          folder: docs/.vitepress/dist # 部署的文件夹
