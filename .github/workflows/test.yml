@@ -6,7 +6,7 @@ jobs: # 任务
     runs-on: ubuntu-latest # 运行环境
     steps: # 步骤
       - name: Checkout # 检出代码
-        user: actions/checkout@v3 # 检出代码操作
+        uses: actions/checkout@v3 # 检出代码操作
 
       - name: install and build
         run: |
@@ -15,6 +15,6 @@ jobs: # 任务
           pnpm docs:build
 
       - name: deploy
-        user: JamesIves/ github-pages-deploy-action@4
+        uses: JamesIves/ github-pages-deploy-action@4
         with:
           folder: docs/.vitepress/dist # 部署的文件夹
